@@ -1,0 +1,5 @@
+table:
+  name: raw_titanic
+  location: seeds/titanic3.csv
+  with-header: true
+  file-format: csv

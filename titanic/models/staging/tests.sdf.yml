@@ -1,0 +1,10 @@
+table:
+  name: titanic_drop
+  columns:
+    - name: full_name
+      tests:
+        - expect: unique()
+        - expect: not_null()
+    - name: survived_indicator
+      tests:
+        - expect: in_accepted_values([0, 1])
