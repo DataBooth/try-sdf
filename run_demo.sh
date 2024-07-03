@@ -48,6 +48,10 @@ sdf lineage staging.stg_installs_per_campaign --forward
 
 sdf run analytics.dim_marketing_campaigns
 
+# Bonus debugging
+
+
+
 
 
 
