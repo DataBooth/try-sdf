@@ -25,3 +25,12 @@ workspace:
         materialization: view
     - path: metadata 
       index: schema-table-name
+
+---
+classifier:
+  name: PII
+  labels:
+    - name: Name
+    - name: Sex
+    - name: Age
+    - name: Location

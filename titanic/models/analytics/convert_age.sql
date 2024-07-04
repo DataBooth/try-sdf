@@ -7,5 +7,6 @@ SELECT  passenger_class
        ,survived_indicator
        ,full_name
        ,sex
-       ,age
+       ,CAST(age AS REAL) AS age_float
+
 FROM titanic.staging.drop_cols
