@@ -1,15 +1,18 @@
-WITH convert_age AS
-(
-	SELECT  *
-	FROM staging.dropping
+WITH convert_age AS (
+    SELECT *
+    FROM staging.dropping
 )
-SELECT  passenger_class
-       ,CASE WHEN survived_indicator = '1' OR survived_indicator = 1 THEN TRUE
-             WHEN survived_indicator = '0' OR survived_indicator = 0 THEN FALSE  ELSE NULL -- for any other values that are not 0 or 1
-             END          AS survived_bool
-       ,survived_indicator
-       ,full_name
-       ,sex
-       ,CAST(age AS REAL) AS age_float
+
+SELECT
+    passenger_class,
+    survived_indicator,
+    full_name,
+    sex,
+    CASE
+        WHEN survived_indicator = '1' OR survived_indicator = 1 THEN TRUE
+        -- for any other values that are not 0 or 1
+        WHEN survived_indicator = '0' OR survived_indicator = 0 THEN FALSE
+    END AS survived_bool,
+    CAST(age AS REAL) AS age_float
 
 FROM titanic.staging.dropping

@@ -12,3 +12,12 @@ reqs:
 sdf-version:
     sdf --version
 
+# fluff dotsql:
+#     sqlfluff fix --dialect ansi {{dotsql}}
+
+sdf-run:
+    sdf run --show all
+
+sdf-compile:
+    sdf compile --show all
+
