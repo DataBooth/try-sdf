@@ -1,8 +1,7 @@
-WITH titanic_convert_age AS
+WITH convert_age AS
 (
 	SELECT  *
-
-	FROM staging.drop_cols
+	FROM staging.dropping
 )
 SELECT  passenger_class
        ,CASE WHEN survived_indicator = '1' OR survived_indicator = 1 THEN TRUE
@@ -13,4 +12,4 @@ SELECT  passenger_class
        ,sex
        ,CAST(age AS REAL) AS age_float
 
-FROM titanic.staging.drop_cols
+FROM titanic.staging.dropping
